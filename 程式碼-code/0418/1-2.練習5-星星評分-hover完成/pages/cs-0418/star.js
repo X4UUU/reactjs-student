@@ -13,6 +13,10 @@ export default function Star() {
     <>
       <h1>星星評分範例</h1>
       <div>
+        {/* 
+          這裡使用簡易建立5個陣列1...N的語法，可以參考:
+          https://github.com/orgs/mfee-react/discussions/50 
+        */}
         {Array(5)
           .fill(1)
           .map((v, i) => {
@@ -39,7 +43,7 @@ export default function Star() {
                 }}
               >
                 <span
-                  // 判斷星星是否要點亮。如果這個星星的分數(score)小於等於目前的評分(rating)，則套用亮起樣式
+                  // 如果這個星星的分數(score)小於等於目前的評分(rating)，或小於目前的滑鼠游標懸停(hover)評分，則套用亮起樣式
                   className={
                     score <= rating || score <= hoverRating
                       ? styles['on']
